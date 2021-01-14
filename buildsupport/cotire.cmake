@@ -1559,7 +1559,7 @@ function (cotire_add_makedep_flags _language _compilerID _compilerVersion _flags
             # -Eonly just run preprocessor, no output
             if (_flags)
                 # append to list
-                list (APPEND _flags -H -E -fno-color-diagnostics -Xclang -Eonly)
+                list (APPEND _flags -H -E -fno-color-diagnostics -Xclang -Eonly -stdlib=libc++ -faddress-sanatizer)
             else()
                 # return as a flag string
                 set (_flags "-H -E -fno-color-diagnostics -Xclang -Eonly")
